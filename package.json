@@ -2,8 +2,8 @@
   "name": "ip-check",
   "title": "ip-check",
   "id": "jid1-qDZOmCLBeE4b2A",
-  "description": "a basic add-on",
-  "author": "",
+  "description": "This simple addon will show you the IP address of the site you are currently browsing, with a link to whois.sc for each IP.",
+  "author": "Dan Clarke",
   "license": "MPL 2.0",
-  "version": "0.1"
+  "version": "0.1.1"
 }
