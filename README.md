@@ -7,9 +7,9 @@ This project uses PHP's `gethostbyname()` to show end users the IP address of th
 3. Enjoy!
 
 ## Installation
-To manually build the extension bundle (.xpi) from the source you need to install the [Firefox Add-on SDK](https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Installation). Then execute the command `cfx xpi` from the add-on’s directory:
+To manually build the extension bundle (.xpi) from the source you need to install the [Firefox Add-on SDK](https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Installation). Then execute the command `jpm xpi` from the add-on’s directory:
 
-	cfx xpi
+	jpm xpi
 
 This command will produce a file named `ip-check.xpi`. You can simply drag and drop it on Firefox to install the Add-on.
 
