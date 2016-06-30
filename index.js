@@ -5,7 +5,7 @@ var self = require('sdk/self')
 var tabs = require('sdk/tabs')
 var button = ToggleButton({ id: 'obt-show-ip', label: 'Show IP', onChange: handleChange, icon: {'16': './icon-16.png', '32': './icon-32.png', '64': './icon-64.png'} })
 var panel = panels.Panel({ onHide: handleHide })
-//const {Cc, Ci} = require('chrome')
+const {Cc, Ci} = require('chrome')
 
 if (!Date.now) { Date.now = function () { return new Date().getTime() } }
 tabs.on('ready', function (tab) { handleChange(button.state('window')) })
@@ -33,7 +33,8 @@ function handleChange (state) {
   var localDNS = nsrecord.getNextAddrAsString()
 
   if (tabs.activeTab.url.indexOf('#from-ip-check') === -1) {
-    var finalURL = 'http://a.mby.me/ipcheck/?site=' + base64.encode(tabs.activeTab.url) + '&time=' + Math.round(new Date() / 1000) + '&ip=' + localDNS + '&version=' + self.version
+    var ourAddress = intDNS.hostname
+    var finalURL = 'http://a.mby.me/ipcheck/?site=' + base64.encode(ourAddress) + '&time=' + Math.round(new Date() / 1000) + '&ip=' + localDNS + '&version=' + self.version
     if (state.checked) {
       panel.contentURL = self.data.url(finalURL)
       panel.show({ position: button })
